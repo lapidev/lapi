@@ -1,0 +1,53 @@
+{
+  "name": "lapidev",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "prettier": "prettier '**/*' --ignore-unknown --ignore-path .gitignore",
+    "prettier:write": "npm run prettier -- --write",
+    "prettier:check": "npm run prettier -- --check",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.18.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**",
+          ".next/**"
+        ]
+      },
+      "lint": {},
+      "dev": {
+        "cache": false
+      },
+      "test": {
+        "dependsOn": [
+          "^build"
+        ]
+      }
+    },
+    "baseBranch": "origin/main"
+  },
+  "prettier": "./packages/prettier-config",
+  "lint-staged": {
+    "**/*": "npm run prettier:write"
+  }
+}
