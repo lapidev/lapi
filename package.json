@@ -14,7 +14,10 @@
     "prettier": "prettier '**/*' --ignore-unknown --ignore-path .gitignore",
     "prettier:write": "npm run prettier -- --write",
     "prettier:check": "npm run prettier -- --check",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.18.1",
