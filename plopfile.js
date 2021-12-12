@@ -39,6 +39,11 @@ export default function (plop) {
         path: 'packages/{{name}}/test/index.ts',
         templateFile: 'templates/package/index.spec.ts.hbs',
       },
+      {
+        type: 'add',
+        path: 'packages/{{name}}/babel.config.cjs',
+        templateFile: 'templates/package/babel.config.cjs.hbs',
+      },
     ],
   })
 }

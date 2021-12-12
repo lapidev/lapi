@@ -24,7 +24,6 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "yarn lint --fix"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
@@ -48,9 +47,7 @@
     "@babel/preset-typescript": "^7.16.0",
     "babel-plugin-replace-ts-export-assignment": "^0.0.2"
   },
-  "peerDependenciesMeta": {
-    "@babel/cli": {
-      "version": "^7.16.0"
-    }
+  "peerDependencies": {
+    "@babel/cli": "^7.16.0"
   }
 }
