@@ -1,0 +1,56 @@
+{
+  "name": "@lapidev/babel-config",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "private": true,
+  "readme": "README.md",
+  "description": "Babel config for lapi.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lapidev/lapi"
+  },
+  "bugs": {
+    "url": "https://github.com/lapidev/lapi/issues"
+  },
+  "homepage": "https://lapi.dev",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "yarn lint --fix"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "prettier": "@lapidev/prettier-config",
+  "devDependencies": {
+    "@lapidev/eslint-config": "*",
+    "@lapidev/prettier-config": "*",
+    "eslint": "^7",
+    "prettier": "^2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@lapidev/eslint-config"
+    ]
+  },
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "babel-plugin-replace-ts-export-assignment": "^0.0.2"
+  },
+  "peerDependenciesMeta": {
+    "@babel/cli": {
+      "version": "^7.16.0"
+    }
+  }
+}

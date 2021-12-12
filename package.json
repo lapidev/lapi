@@ -2,27 +2,32 @@
   "name": "lapidev",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "internal/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
     "prettier": "prettier '**/*' --ignore-unknown --ignore-path .gitignore",
-    "prettier:write": "npm run prettier -- --write",
-    "prettier:check": "npm run prettier -- --check",
+    "prettier:write": "yarn prettier --write",
+    "prettier:check": "yarn prettier --check",
     "prepare": "husky install",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish"
+    "changeset:publish": "changeset publish",
+    "plop": "plop"
   },
   "devDependencies": {
     "@changesets/cli": "^2.18.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
+    "plop": "^3.0.4",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
@@ -38,19 +43,31 @@
         ]
       },
       "lint": {},
+      "prettier": {},
+      "prettier:write": {},
+      "prettier:check": {},
       "dev": {
         "cache": false
       },
       "test": {
         "dependsOn": [
           "^build"
+        ],
+        "outputs": []
+      },
+      "test:coverage": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "test/coverage/**"
         ]
       }
     },
     "baseBranch": "origin/main"
   },
-  "prettier": "./packages/prettier-config",
+  "prettier": "./internal/prettier-config",
   "lint-staged": {
-    "**/*": "npm run prettier:write"
+    "**/*": "yarn prettier:write"
   }
 }

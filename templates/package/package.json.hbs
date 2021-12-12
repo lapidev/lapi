@@ -1,0 +1,12 @@
+{ "name": "@lapidev/{{name}}", "version": "0.0.0", "license": "Apache-2.0", "main": "dist/index.js",
+"types": "dist/index.d.ts", "type": "module", "files": [ "dist", "src" ], "publishConfig": {
+"access": "public", "registry": "https://registry.npmjs.org/" }, "readme": "README.md",
+"description": "{{description}}", "repository": { "type": "git", "url":
+"https://github.com/lapidev/lapi" }, "bugs": { "url": "https://github.com/lapidev/lapi/issues" },
+"homepage": "https://lapi.dev", "engines": { "node": ">=16" }, "scripts": { "build": "tsc -p
+tsconfig.json", "test": "jest", "test:coverage": "yarn test --coverage", "lint": "eslint
+src/**/*.ts", "lint:fix": "yarn lint --fix" }, "peerDependencies": {}, "husky": { "hooks": {
+"pre-commit": "yarn lint" } }, "prettier": "@lapidev/prettier-config", "devDependencies": {
+"@lapidev/eslint-config": "*", "@lapidev/jest-config": "*", "@lapidev/prettier-config": "*",
+"@lapidev/tsconfig": "*", "eslint": "^7", "prettier": "^2", "typescript": "^4.5.3" },
+"eslintConfig": { "extends": [ "@lapidev/eslint-config/typescript" ] }, "dependencies": { } }

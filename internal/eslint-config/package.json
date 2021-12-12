@@ -3,13 +3,20 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "Apache-2.0",
+  "type": "commonjs",
   "files": [
     "index.js",
     "typescript.js"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+  "private": true,
+  "readme": "README.md",
+  "description": "ESLint configuration for lapi.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lapidev/lapi"
+  },
+  "bugs": {
+    "url": "https://github.com/lapidev/lapi/issues"
   },
   "homepage": "https://lapi.dev",
   "scripts": {
