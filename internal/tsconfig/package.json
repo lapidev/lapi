@@ -18,11 +18,12 @@
   "homepage": "https://lapi.dev",
   "scripts": {},
   "devDependencies": {
-    "@lapidev/prettier-config": "*",
-    "@lapidev/eslint-config": "*",
+    "@lapidev/prettier-config": "workspace:*",
+    "@lapidev/eslint-config": "workspace:*",
     "eslint": "^7",
     "prettier": "^2"
   },
+  "prettier": "@lapidev/prettier-config",
   "eslintConfig": {
     "extends": [
       "@lapidev/eslint-config"

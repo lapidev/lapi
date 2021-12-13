@@ -1,21 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "declaration": true,
+    "allowSyntheticDefaultImports": true,
     "composite": true,
+    "declaration": true,
     "emitDeclarationOnly": true,
-    "isolatedModules": true,
+    "esModuleInterop": false,
     "importsNotUsedAsValues": "error",
-    "strict": true,
+    "isolatedModules": false,
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "esModuleInterop": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "es2017"
   },
   "exclude": ["**/node_modules/**/*", "**/.turbo/**/*", "**/test/**/*", "**/dist/**/*"]
 }

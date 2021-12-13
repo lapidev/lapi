@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "apps/*",
     "packages/*",
-    "internal/*"
+    "internal/*",
+    "examples/*"
   ],
   "scripts": {
     "build": "turbo run build",
@@ -14,9 +14,9 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
-    "prettier": "prettier '**/*' --ignore-unknown --ignore-path .gitignore",
-    "prettier:write": "yarn prettier --write",
-    "prettier:check": "yarn prettier --check",
+    "prettier": "prettier '**/*' --ignore-unknown --ignore-path .prettierignore",
+    "prettier:write": "pnpm prettier -- --write",
+    "prettier:check": "pnpm prettier -- --check",
     "prepare": "husky install",
     "changeset": "changeset",
     "changeset:version": "changeset version",
@@ -29,7 +29,7 @@
     "lint-staged": "^12.1.2",
     "plop": "^3.0.4",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "turbo": "^1.0.6"
   },
   "turbo": {
     "pipeline": {
@@ -42,10 +42,14 @@
           ".next/**"
         ]
       },
-      "lint": {},
+      "lint": {
+        "cache": false
+      },
       "prettier": {},
       "prettier:write": {},
-      "prettier:check": {},
+      "prettier:check": {
+        "cache": false
+      },
       "dev": {
         "cache": false
       },
@@ -68,6 +72,6 @@
   },
   "prettier": "./internal/prettier-config",
   "lint-staged": {
-    "**/*": "yarn prettier:write"
+    "**/*": "pnpm prettier:write"
   }
 }

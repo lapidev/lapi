@@ -22,19 +22,20 @@
   "scripts": {
     "test": "eslint --ext .js ./"
   },
+  "peerDependencies": {
+    "eslint": "^7"
+  },
+  "devDependencies": {
+    "@lapidev/prettier-config": "workspace:*",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
     "eslint-config-get-off-my-lawn": "^6.0.3"
   },
-  "peerDependencies": {
-    "eslint": "^7"
-  },
-  "devDependencies": {
-    "@lapidev/prettier-config": "*",
-    "eslint": "^7.32.0",
-    "prettier": "^2.5.1"
-  },
+  "prettier": "@lapidev/prettier-config",
   "eslintConfig": {
     "extends": [
       "./index"

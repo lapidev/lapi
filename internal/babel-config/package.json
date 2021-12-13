@@ -21,25 +21,8 @@
     "node": ">=16"
   },
   "scripts": {
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "yarn lint --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
-  "prettier": "@lapidev/prettier-config",
-  "devDependencies": {
-    "@lapidev/eslint-config": "*",
-    "@lapidev/prettier-config": "*",
-    "eslint": "^7",
-    "prettier": "^2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "@lapidev/eslint-config"
-    ]
+    "lint": "../../scripts/lint.sh",
+    "lint:fix": "pnpm lint -- --fix"
   },
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
@@ -49,5 +32,17 @@
   },
   "peerDependencies": {
     "@babel/cli": "^7.16.0"
+  },
+  "devDependencies": {
+    "@lapidev/eslint-config": "workspace:*",
+    "@lapidev/prettier-config": "workspace:*",
+    "eslint": "^7",
+    "prettier": "^2"
+  },
+  "prettier": "@lapidev/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@lapidev/eslint-config"
+    ]
   }
 }

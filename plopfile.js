@@ -36,7 +36,7 @@ export default function (plop) {
       },
       {
         type: 'add',
-        path: 'packages/{{name}}/test/index.ts',
+        path: 'packages/{{name}}/test/index.spec.ts',
         templateFile: 'templates/package/index.spec.ts.hbs',
       },
       {

@@ -21,5 +21,6 @@
   "homepage": "https://lapi.dev",
   "peerDependencies": {
     "prettier": "*"
-  }
+  },
+  "prettier": "./index"
 }

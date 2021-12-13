@@ -1,10 +1,10 @@
 
 babel() {
-  yarn babel --extensions '.ts' ./src -d ./dist
+  pnpm babel --extensions '.ts' ./src -d ./dist
 }
 
 tsc() {
-  yarn tsc --emitDeclarationOnly -p tsconfig.json
+  pnpm tsc --emitDeclarationOnly -p tsconfig.json
 }
 
 babel

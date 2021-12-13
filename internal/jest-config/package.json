@@ -22,29 +22,24 @@
     "node": ">=16"
   },
   "scripts": {
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "yarn lint --fix"
+    "lint": "../../scripts/lint.sh",
+    "lint:fix": "../../scripts/lint.sh --fix"
   },
+  "dependencies": {},
   "peerDependencies": {
     "jest": "*",
     "ts-jest": "*s"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
-  "prettier": "@lapidev/prettier-config",
   "devDependencies": {
     "@lapidev/eslint-config": "*",
     "@lapidev/prettier-config": "*",
     "eslint": "^7",
     "prettier": "^2"
   },
+  "prettier": "@lapidev/prettier-config",
   "eslintConfig": {
     "extends": [
       "@lapidev/eslint-config"
     ]
-  },
-  "dependencies": {}
+  }
 }
