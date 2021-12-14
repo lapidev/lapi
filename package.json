@@ -11,24 +11,32 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "watch": "turbo run watch --parallel --continue",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
     "prettier": "prettier '**/*' --ignore-unknown --ignore-path .prettierignore",
     "prettier:write": "pnpm prettier -- --write",
     "prettier:check": "pnpm prettier -- --check",
-    "prepare": "husky install",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish",
-    "plop": "plop"
+    "changeset:publish": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.18.1",
+    "@preconstruct/cli": "^2.1.5",
     "lint-staged": "^12.1.2",
     "plop": "^3.0.4",
     "prettier": "^2.5.1",
     "turbo": "^1.0.6"
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*",
+      "internal/*",
+      "!internal/tsconfig"
+    ]
   },
   "turbo": {
     "pipeline": {
@@ -42,14 +50,19 @@
         ]
       },
       "lint": {
-        "cache": false
+        "outputs": [
+          "src/**/*"
+        ]
       },
-      "prettier": {},
-      "prettier:write": {},
-      "prettier:check": {
-        "cache": false
+      "lint:fix": {
+        "outputs": [
+          "src/**/*"
+        ]
       },
       "dev": {
+        "cache": false
+      },
+      "watch": {
         "cache": false
       },
       "test": {

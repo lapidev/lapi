@@ -1,16 +1,16 @@
 {
   "name": "@lapidev/prettier-config",
   "version": "0.0.0",
-  "main": "index.js",
   "license": "Apache-2.0",
-  "type": "commonjs",
-  "scripts": {},
-  "files": [
-    "index.js"
-  ],
   "private": true,
   "readme": "README.md",
   "description": "ESLint configuration for lapi.dev",
+  "type": "commonjs",
+  "main": "dist/lapidev-prettier-config.cjs.js",
+  "module": "dist/lapidev-prettier-config.esm.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/lapidev/lapi"
@@ -19,8 +19,23 @@
     "url": "https://github.com/lapidev/lapi/issues"
   },
   "homepage": "https://lapi.dev",
+  "scripts": {
+    "lint": "../../scripts/lint.sh",
+    "lint:fix": "pnpm run lint -- --fix",
+    "build": "preconstruct build",
+    "watch": "preconstruct watch",
+    "test": "pnpm run lint"
+  },
   "peerDependencies": {
     "prettier": "*"
   },
-  "prettier": "./index"
+  "prettier": "./src",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@lapidev/babel-config": "workspace:*",
+    "@lapidev/eslint-config": "workspace:*",
+    "@preconstruct/cli": "^2.1.5",
+    "eslint": "^8.4.1",
+    "prettier": "^2.5.1"
+  }
 }

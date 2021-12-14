@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "type": "module",
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/lapidev-plugin-routes.cjs.js",
+  "module": "dist/lapidev-plugin-routes.esm.js",
+  "types": "dist/lapidev-plugin-routes.cjs.d.ts",
   "files": [
     "dist"
   ],
@@ -26,11 +27,12 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "../../scripts/build.sh",
+    "build": "preconstruct build",
+    "watch": "preconstruct watch",
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "lint": "eslintsrc/**/*.ts",
-    "lint:fix": "../../scripts/lint.sh --fix"
+    "test:coverage": "pnpm run test -- --coverage",
+    "lint": "../../scripts/lint.sh",
+    "lint:fix": "pnpm run lint -- --fix"
   },
   "dependencies": {
     "@lapidev/utils": "^0.0.0",
@@ -40,19 +42,18 @@
     "@hapi/hapi": "^20"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
     "@hapi/hapi": "^20.2.1",
+    "@lapidev/babel-config": "workspace:*",
     "@lapidev/eslint-config": "workspace:*",
     "@lapidev/jest-config": "workspace:*",
     "@lapidev/prettier-config": "workspace:*",
     "@lapidev/tsconfig": "workspace:*",
+    "@preconstruct/cli": "^2.1.5",
     "eslint": "^7",
     "prettier": "^2",
     "typescript": "^4.5.3"
   },
-  "prettier": "@lapidev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@lapidev/eslint-config/typescript"
-    ]
-  }
+  "prettier": "@lapidev/prettier-config"
 }

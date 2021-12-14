@@ -2,5 +2,5 @@
 const babelConfig = require('@lapidev/babel-config')
 
 module.exports = {
-  ...babelConfig.ts,
+  ...babelConfig.js,
 }

@@ -23,10 +23,5 @@
     "eslint": "^7",
     "prettier": "^2"
   },
-  "prettier": "@lapidev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@lapidev/eslint-config"
-    ]
-  }
+  "prettier": "@lapidev/prettier-config"
 }
