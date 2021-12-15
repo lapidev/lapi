@@ -2,7 +2,6 @@
   "name": "lapidev",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "workspaces": [
     "packages/*",
     "internal/*",
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.18.1",
+    "globby": "^12.0.2",
     "lint-staged": "^12.1.2",
     "plop": "^3.0.4",
     "prettier": "^2.5.1",
