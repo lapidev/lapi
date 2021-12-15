@@ -1,40 +1,19 @@
 {
   "name": "with-typescript",
-  "version": "0.0.0",
-  "private": true,
-  "license": "Apache-2.0",
-  "readme": "README.md",
   "type": "module",
-  "description": "Basic API using @lapidev/lapi",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lapidev/lapi"
-  },
-  "bugs": {
-    "url": "https://github.com/lapidev/lapi/issues"
-  },
-  "homepage": "https://lapi.dev",
   "scripts": {
     "dev": " nodemon --watch src --exec node --es-module-specifier-resolution=node --loader ts-node/esm --no-warnings src/index.ts"
   },
   "devDependencies": {
-    "@lapidev/eslint-config": "workspace:*",
-    "@lapidev/prettier-config": "workspace:*",
-    "eslint": "^7",
+    "@types/node": "^16",
     "nodemon": "^2.0.15",
-    "prettier": "^2",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.3"
-  },
-  "eslintConfig": {
-    "extends": [
-      "@lapidev/eslint-config/typescript"
-    ]
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
     "@lapidev/plugin-lapi": "workspace:*",
     "apollo-server-hapi": "^3.5.0",
-    "graphql": "^16.1.0"
+    "graphql": "^15"
   }
 }

@@ -2,13 +2,15 @@
   "name": "@lapidev/babel-config",
   "version": "0.0.0",
   "license": "Apache-2.0",
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
   "private": true,
   "readme": "README.md",
   "description": "Babel config for lapi.dev",
+  "type": "commonjs",
+  "main": "dist/lapidev-babel-config.cjs.js",
+  "module": "dist/lapidev-babel-config.esm.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/lapidev/lapi"
@@ -22,7 +24,10 @@
   },
   "scripts": {
     "lint": "../../scripts/lint.sh",
-    "lint:fix": "pnpm lint -- --fix"
+    "lint:fix": "pnpm run lint -- --fix",
+    "build": "preconstruct build",
+    "watch": "preconstruct watch",
+    "test": "pnpm run lint"
   },
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
@@ -31,18 +36,12 @@
     "babel-plugin-replace-ts-export-assignment": "^0.0.2"
   },
   "peerDependencies": {
-    "@babel/cli": "^7.16.0"
+    "@babel/core": "^7.16.5"
   },
   "devDependencies": {
-    "@lapidev/eslint-config": "workspace:*",
-    "@lapidev/prettier-config": "workspace:*",
-    "eslint": "^7",
+    "@babel/core": "^7.16.5",
+    "@preconstruct/cli": "^2.1.5",
     "prettier": "^2"
   },
-  "prettier": "@lapidev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@lapidev/eslint-config"
-    ]
-  }
+  "prettier": "../prettier-config/src"
 }

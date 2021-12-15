@@ -2,14 +2,15 @@
   "name": "@lapidev/jest-config",
   "version": "0.0.0",
   "license": "Apache-2.0",
-  "main": "index.js",
-  "type": "commonjs",
-  "files": [
-    "index.js"
-  ],
   "private": true,
   "readme": "README.md",
   "description": "Jest configuration for testing lapi.dev packages",
+  "type": "commonjs",
+  "main": "dist/lapidev-jest-config.cjs.js",
+  "module": "dist/lapidev-jest-config.esm.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/lapidev/lapi"
@@ -23,23 +24,24 @@
   },
   "scripts": {
     "lint": "../../scripts/lint.sh",
-    "lint:fix": "../../scripts/lint.sh --fix"
+    "lint:fix": "pnpm run lint -- --fix",
+    "build": "preconstruct build",
+    "watch": "preconstruct watch",
+    "test": "pnpm run lint"
   },
-  "dependencies": {},
   "peerDependencies": {
     "jest": "*",
-    "ts-jest": "*s"
+    "ts-jest": "*",
+    "typescript": "*"
   },
   "devDependencies": {
-    "@lapidev/eslint-config": "*",
-    "@lapidev/prettier-config": "*",
+    "@babel/core": "^7.16.5",
+    "@lapidev/babel-config": "workspace:*",
+    "@lapidev/eslint-config": "workspace:*",
+    "@lapidev/prettier-config": "workspace:*",
+    "@preconstruct/cli": "^2.1.5",
     "eslint": "^7",
     "prettier": "^2"
   },
-  "prettier": "@lapidev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@lapidev/eslint-config"
-    ]
-  }
+  "prettier": "@lapidev/prettier-config"
 }

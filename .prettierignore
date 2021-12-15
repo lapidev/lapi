@@ -33,4 +33,6 @@ yarn-error.log*
 
 *.tsbuildinfo
 
+dist/
+
 *.hbs
