@@ -1,0 +1,16 @@
+{
+  "env": {
+    "targets": {
+      "node": "16"
+    }
+  },
+  "exclude": [".*\\.d\\.ts"],
+  "jsc": {
+    "parser": {
+      "syntax": "typescript"
+    }
+  },
+  "module": {
+    "type": "es6"
+  }
+}

@@ -3,25 +3,17 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "files": [
-    "pkg.json"
+    "tsconfig.json"
   ],
   "private": true,
-  "readme": "README.md",
-  "description": "TypeScript configurations used by lapi.dev",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lapidev/lapi"
+  "engines": {
+    "node": "16.x"
   },
-  "bugs": {
-    "url": "https://github.com/lapidev/lapi/issues"
-  },
-  "homepage": "https://lapi.dev",
   "scripts": {},
-  "devDependencies": {
-    "@lapidev/prettier-config": "workspace:*",
-    "@lapidev/eslint-config": "workspace:*",
-    "eslint": "^7",
-    "prettier": "^2"
+  "dependencies": {
+    "@tsconfig/node16": "^1.0.2"
   },
-  "prettier": "@lapidev/prettier-config"
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
 }

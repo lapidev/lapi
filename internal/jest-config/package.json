@@ -5,43 +5,30 @@
   "private": true,
   "readme": "README.md",
   "description": "Jest configuration for testing lapi.dev packages",
-  "type": "commonjs",
-  "main": "dist/lapidev-jest-config.cjs.js",
-  "module": "dist/lapidev-jest-config.esm.js",
+  "main": "src/index.js",
   "files": [
-    "dist"
+    "src"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lapidev/lapi"
-  },
-  "bugs": {
-    "url": "https://github.com/lapidev/lapi/issues"
-  },
-  "homepage": "https://lapi.dev",
   "engines": {
-    "node": ">=16"
+    "node": "16.x"
   },
   "scripts": {
     "lint": "../../scripts/lint.sh",
     "lint:fix": "pnpm run lint -- --fix",
-    "build": "preconstruct build",
-    "watch": "preconstruct watch",
+    "build": "exit 0",
     "test": "pnpm run lint"
   },
   "peerDependencies": {
     "jest": "*",
-    "ts-jest": "*",
-    "typescript": "*"
+    "@swc/core": ">=1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.5",
-    "@lapidev/babel-config": "workspace:*",
-    "@lapidev/eslint-config": "workspace:*",
-    "@lapidev/prettier-config": "workspace:*",
-    "@preconstruct/cli": "^2.1.5",
-    "eslint": "^7",
-    "prettier": "^2"
+    "@swc/core": "^1.2.138",
+    "eslint": "8.8.0",
+    "eslint-config-get-off-my-lawn": "^7.0.0",
+    "prettier": "^2.5.1"
   },
-  "prettier": "@lapidev/prettier-config"
+  "dependencies": {
+    "@swc/jest": "^0.2.17"
+  }
 }

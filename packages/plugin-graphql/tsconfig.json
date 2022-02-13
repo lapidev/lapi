@@ -1,8 +1,0 @@
-{
-  "extends": "@lapidev/tsconfig/pkg.json",
-  "include": ["src", "types"],
-  "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./dist"
-  }
-}

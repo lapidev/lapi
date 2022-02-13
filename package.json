@@ -15,69 +15,18 @@
     "lint:fix": "turbo run lint:fix",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
-    "prettier": "prettier '**/*' --ignore-unknown --ignore-path .prettierignore",
-    "prettier:write": "pnpm prettier -- --write",
-    "prettier:check": "pnpm prettier -- --check",
+    "prettier": "prettier '**/*' --ignore-unknown --ignore-path .gitignore",
+    "prettier:write": "npm run prettier -- --write",
+    "prettier:check": "npm run prettier -- --check",
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:publish": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.18.1",
-    "@preconstruct/cli": "^2.1.5",
-    "prettier": "^2.5.1",
-    "turbo": "^1.0.6"
+    "@changesets/cli": "2.20.0",
+    "prettier": "2.5.1",
+    "rimraf": "3.0.2",
+    "turbo": "1.1.2"
   },
-  "preconstruct": {
-    "packages": [
-      "packages/*",
-      "internal/*",
-      "!internal/tsconfig"
-    ]
-  },
-  "turbo": {
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          "dist/**",
-          ".next/**"
-        ]
-      },
-      "lint": {
-        "outputs": [
-          "src/**/*"
-        ]
-      },
-      "lint:fix": {
-        "outputs": [
-          "src/**/*"
-        ]
-      },
-      "dev": {
-        "cache": false
-      },
-      "watch": {
-        "cache": false
-      },
-      "test": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": []
-      },
-      "test:coverage": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          "test/coverage/**"
-        ]
-      }
-    },
-    "baseBranch": "origin/main"
-  },
-  "prettier": "./internal/prettier-config"
+  "packageManager": "npm@8.5.0"
 }

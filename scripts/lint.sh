@@ -1,6 +1,10 @@
 
-lint() {
-  pnpm eslint "${@}" "src/**/*.{ts,js}"
-}
+eslintArgs=()
 
-lint "${@}"
+# Add script name
+eslintArgs+=("--ignore-path" "../../.gitignore" ".")
+
+# Passthrough arguments and flags
+eslintArgs+=($@)
+
+npm exec -- eslint "${eslintArgs[@]}"

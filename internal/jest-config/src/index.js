@@ -10,17 +10,12 @@ module.exports = {
       statements: 80,
     },
   },
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.json',
-    },
-  },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   rootDir: './test',
   testMatch: ['**/*.spec.(ts|tsx|js|jsx)'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/src/'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx|js|jsx)$': '@swc/jest',
   },
   verbose: true,
-}
+};
