@@ -1,6 +1,6 @@
 {
   "name": "@lapidev/walker",
-  "version": "0.0.0",
+  "version": "0.0.1-next.0",
   "description": "@hapi/hapi plugin that adds routes from the filesystem",
   "homepage": "https://lapi.dev",
   "bugs": {
