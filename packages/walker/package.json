@@ -22,9 +22,11 @@
     "build": "../../scripts/build.sh",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "npm run lint -- --fix",
+    "sort-package-json": "sort-package-json",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage"
   },
+  "prettier": "../../.prettierrc.js",
   "dependencies": {
     "globby": "^13.1.1"
   },
@@ -46,6 +48,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "readme": "README.md",
-  "prettier": "../../.prettierrc.js"
+  "readme": "README.md"
 }

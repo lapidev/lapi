@@ -29,9 +29,7 @@ type WalkRoutesOptions = WalkOptions;
  * Walks the given directory for the file extensions and imports the contents. Filters out any file that is not named a
  * valid HTTP method.
  */
-const walkRoutes = async <T extends object>(
-  options: WalkRoutesOptions = {},
-): Promise<WalkRoutesResult<T>[]> => {
+const walkRoutes = async <T extends object>(options: WalkRoutesOptions = {}): Promise<WalkRoutesResult<T>[]> => {
   const files = await walk<T>(options);
 
   return files

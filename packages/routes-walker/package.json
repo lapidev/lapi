@@ -22,14 +22,13 @@
     "build": "../../scripts/build.sh",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "npm run lint -- --fix",
+    "sort-package-json": "sort-package-json",
     "test": "jest",
     "test:coverage": "npm run test -- --coverage"
   },
+  "prettier": "../../.prettierrc.js",
   "dependencies": {
     "globby": "^13.1.1"
-  },
-  "peerDependencies": {
-    "@lapidev/walker": "0.0.0"
   },
   "devDependencies": {
     "@lapidev/jest-config": "0.0.0",
@@ -43,6 +42,9 @@
     "prettier": "^2.5.1",
     "typescript": "4.5.5"
   },
+  "peerDependencies": {
+    "@lapidev/walker": "0.0.0"
+  },
   "engines": {
     "node": "16.x"
   },
@@ -50,6 +52,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "readme": "README.md",
-  "prettier": "../../.prettierrc.js"
+  "readme": "README.md"
 }

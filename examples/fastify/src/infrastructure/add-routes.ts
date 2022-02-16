@@ -14,9 +14,10 @@ const addRoutes = async (fastify: FastifyInstance): Promise<void> => {
   const routes = await walkRoutes<RouteImport>({ baseDir: join(cwd(), 'src', 'routes') });
 
   routes.map(({ method, path, import: { handler } }) => {
-    (fastify as unknown as Record<string, (path: string, handler: RouteHandler) => void>)[
-      method.toLowerCase()
-    ](path, handler);
+    (fastify as unknown as Record<string, (path: string, handler: RouteHandler) => void>)[method.toLowerCase()](
+      path,
+      handler,
+    );
   });
 };
 

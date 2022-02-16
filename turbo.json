@@ -18,6 +18,9 @@
     "watch": {
       "cache": false
     },
+    "sort-package-json": {
+      "cache": false
+    },
     "test": {
       "dependsOn": ["^build"],
       "outputs": []
