@@ -1,6 +1,6 @@
 {
   "name": "fastify-example",
-  "version": "0.0.1-next.0",
+  "version": "0.0.1-next.1",
   "private": true,
   "homepage": "https://lapi.dev",
   "bugs": {
@@ -24,7 +24,7 @@
   "prettier": "../../.prettierrc.js",
   "dependencies": {
     "@graphql-tools/utils": "^8.6.1",
-    "@lapidev/resolvers-walker": "0.0.1-next.0",
+    "@lapidev/resolvers-walker": "0.0.1-next.1",
     "@lapidev/routes-walker": "0.0.1-next.0",
     "@lapidev/walker": "0.0.1-next.0",
     "apollo-server-core": "^3.6.3",
