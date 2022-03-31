@@ -3,11 +3,11 @@ import type { WalkOptions } from '@lapidev/walker';
 import { camelCase, pascalCase } from 'change-case';
 import _ from 'lodash-es';
 
-type WalkResolversOptions = WalkOptions & {
+type WalkResolversOptions<U> = WalkOptions & {
   /* The name of the resolver function exported from the files. */
   resolverName?: string;
-  /* A function that wraps the resolver function and returns a new resolver function. */
-  wrapper?: (resolver: Function) => Function;
+  /* A function that composes the resolver from the import. */
+  composer?: (imp: U) => Function;
 };
 
 /**
@@ -25,10 +25,10 @@ type WalkResolversOptions = WalkOptions & {
  * ```
  *
  */
-const walkResolvers = async <T extends object>(options: WalkResolversOptions = {}): Promise<T> => {
+const walkResolvers = async <T extends object, U>(options: WalkResolversOptions<U> = {}): Promise<T> => {
   const { resolverName = 'resolver', wrapper, ...walkOptions } = options;
 
-  const files = await walk(walkOptions);
+  const files = await walk<U>(walkOptions);
 
   const result: object = {};
 
@@ -36,9 +36,8 @@ const walkResolvers = async <T extends object>(options: WalkResolversOptions = {
     const [topLevel, ...rest] = file.filePathParts;
     const camelCased = rest.map((part) => camelCase(part));
     const transformed = [pascalCase(topLevel), ...camelCased];
-    const currentResolver = _.get(file.import, resolverName);
 
-    _.set(result, transformed.join('.'), wrapper ? wrapper(currentResolver) : currentResolver);
+    _.set(result, transformed.join('.'), wrapper ? wrapper(file.import) : _.get(file.import, resolverName));
   });
 
   return result as T;
