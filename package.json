@@ -18,17 +18,17 @@
     "prettier": "prettier '**/*' --ignore-unknown --ignore-path .gitignore",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
-    "sort-package-json": "sort-package-json && turbo run sort-package-json && npm run prettier:write && npm run lint:fix",
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
     "watch": "turbo run watch --parallel --continue"
   },
   "devDependencies": {
-    "@changesets/cli": "2.20.0",
-    "prettier": "2.5.1",
+    "@changesets/cli": "2.22.0",
+    "prettier": "2.6.1",
+    "prettier-plugin-packagejson": "2.2.17",
     "rimraf": "3.0.2",
-    "sort-package-json": "1.54.0",
-    "turbo": "1.1.2"
+    "sort-package-json": "1.55.0",
+    "turbo": "1.1.10"
   },
   "packageManager": "npm@8.5.0"
 }

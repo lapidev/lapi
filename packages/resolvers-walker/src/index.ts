@@ -6,6 +6,8 @@ import _ from 'lodash-es';
 type WalkResolversOptions = WalkOptions & {
   /* The name of the resolver function exported from the files. */
   resolverName?: string;
+  /* A function that wraps the resolver function and returns a new resolver function. */
+  wrapper?: (resolver: Function) => Function;
 };
 
 /**
@@ -24,7 +26,7 @@ type WalkResolversOptions = WalkOptions & {
  *
  */
 const walkResolvers = async <T extends object>(options: WalkResolversOptions = {}): Promise<T> => {
-  const { resolverName = 'resolver', ...walkOptions } = options;
+  const { resolverName = 'resolver', wrapper, ...walkOptions } = options;
 
   const files = await walk(walkOptions);
 
@@ -34,8 +36,9 @@ const walkResolvers = async <T extends object>(options: WalkResolversOptions = {
     const [topLevel, ...rest] = file.filePathParts;
     const camelCased = rest.map((part) => camelCase(part));
     const transformed = [pascalCase(topLevel), ...camelCased];
+    const currentResolver = _.get(file.import, resolverName);
 
-    _.set(result, transformed.join('.'), _.get(file.import, resolverName));
+    _.set(result, transformed.join('.'), wrapper ? wrapper(currentResolver) : currentResolver);
   });
 
   return result as T;

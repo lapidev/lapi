@@ -1,26 +1,21 @@
 {
   "name": "@lapidev/jest-config",
   "version": "0.0.0",
-  "license": "Apache-2.0",
   "private": true,
-  "readme": "README.md",
   "description": "Jest configuration for testing lapi.dev packages",
+  "license": "Apache-2.0",
   "main": "src/index.js",
   "files": [
     "src"
   ],
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
+    "build": "exit 0",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "pnpm run lint -- --fix",
-    "build": "exit 0",
     "test": "pnpm run lint"
   },
-  "peerDependencies": {
-    "jest": "*",
-    "@swc/core": ">=1.2"
+  "dependencies": {
+    "@swc/jest": "^0.2.17"
   },
   "devDependencies": {
     "@swc/core": "^1.2.138",
@@ -28,7 +23,12 @@
     "eslint-config-get-off-my-lawn": "^7.0.0",
     "prettier": "^2.5.1"
   },
-  "dependencies": {
-    "@swc/jest": "^0.2.17"
-  }
+  "peerDependencies": {
+    "@swc/core": ">=1.2",
+    "jest": "*"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "readme": "README.md"
 }

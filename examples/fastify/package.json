@@ -1,9 +1,8 @@
 {
   "name": "fastify-example",
   "version": "0.0.1-next.0",
-  "homepage": "https://lapi.dev",
   "private": true,
-  "type": "module",
+  "homepage": "https://lapi.dev",
   "bugs": {
     "url": "https://github.com/lapidev/lapi/issues"
   },
@@ -12,15 +11,17 @@
     "url": "https://github.com/lapidev/lapi"
   },
   "license": "Apache-2.0",
+  "type": "module",
   "scripts": {
     "build": "exit 0",
+    "dev": "nodemon --watch src --ext ts --exec \"npm run start\"",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "npm run lint -- --fix",
-    "test": "exit 0",
-    "test:coverage": "exit 0",
     "start": "NANO_ENV_MODULE=module node --es-module-specifier-resolution=node --loader ts-node/esm src/index.ts",
-    "dev": "nodemon --watch src --ext ts --exec \"npm run start\""
+    "test": "exit 0",
+    "test:coverage": "exit 0"
   },
+  "prettier": "../../.prettierrc.js",
   "dependencies": {
     "@graphql-tools/utils": "^8.6.1",
     "@lapidev/resolvers-walker": "0.0.1-next.0",
@@ -45,6 +46,5 @@
   "engines": {
     "node": "16.x"
   },
-  "readme": "README.md",
-  "prettier": "../../.prettierrc.js"
+  "readme": "README.md"
 }

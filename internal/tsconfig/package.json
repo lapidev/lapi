@@ -1,19 +1,19 @@
 {
   "name": "@lapidev/tsconfig",
   "version": "0.0.0",
+  "private": true,
   "license": "Apache-2.0",
   "files": [
     "tsconfig.json"
   ],
-  "private": true,
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {},
   "dependencies": {
     "@tsconfig/node16": "^1.0.2"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
