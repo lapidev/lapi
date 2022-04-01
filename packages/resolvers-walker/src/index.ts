@@ -25,8 +25,8 @@ type WalkResolversOptions<U> = WalkOptions & {
  * ```
  *
  */
-const walkResolvers = async <T extends object, U>(options: WalkResolversOptions<U> = {}): Promise<T> => {
-  const { resolverName = 'resolver', wrapper, ...walkOptions } = options;
+const walkResolvers = async <T extends object, U extends object>(options: WalkResolversOptions<U> = {}): Promise<T> => {
+  const { resolverName = 'resolver', composer, ...walkOptions } = options;
 
   const files = await walk<U>(walkOptions);
 
@@ -37,7 +37,7 @@ const walkResolvers = async <T extends object, U>(options: WalkResolversOptions<
     const camelCased = rest.map((part) => camelCase(part));
     const transformed = [pascalCase(topLevel), ...camelCased];
 
-    _.set(result, transformed.join('.'), wrapper ? wrapper(file.import) : _.get(file.import, resolverName));
+    _.set(result, transformed.join('.'), composer ? composer(file.import) : _.get(file.import, resolverName));
   });
 
   return result as T;

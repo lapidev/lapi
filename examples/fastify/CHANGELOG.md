@@ -1,5 +1,12 @@
 # fastify-example
 
+## 0.0.1-next.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @lapidev/resolvers-walker@0.0.1-next.2
+
 ## 0.0.1-next.1
 
 ### Patch Changes
