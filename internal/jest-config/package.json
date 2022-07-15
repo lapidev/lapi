@@ -4,15 +4,15 @@
   "private": true,
   "description": "Jest configuration for testing lapi.dev packages",
   "license": "Apache-2.0",
-  "main": "src/index.js",
+  "main": "jest-preset.js",
   "files": [
-    "src"
+    "jest-preset.js"
   ],
   "scripts": {
     "build": "exit 0",
     "lint": "../../scripts/lint.sh",
-    "lint:fix": "pnpm run lint -- --fix",
-    "test": "pnpm run lint"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npm run lint"
   },
   "dependencies": {
     "@swc/jest": "^0.2.17"

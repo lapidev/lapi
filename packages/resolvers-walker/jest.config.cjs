@@ -1,1 +1,3 @@
-module.exports = require('@lapidev/jest-config');
+module.exports = {
+  preset: '@lapidev/jest-config',
+};

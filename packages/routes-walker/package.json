@@ -27,6 +27,7 @@
   },
   "prettier": "../../.prettierrc.cjs",
   "dependencies": {
+    "@lapidev/walker": "0.0.1-next.0",
     "globby": "^13.1.2"
   },
   "devDependencies": {
@@ -40,9 +41,6 @@
     "eslint-config-get-off-my-lawn": "7.1.0",
     "prettier": "2.7.1",
     "typescript": "4.7.4"
-  },
-  "peerDependencies": {
-    "@lapidev/walker": "^0.0.1-next.0"
   },
   "engines": {
     "node": "16.x"
