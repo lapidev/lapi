@@ -1,5 +1,5 @@
 {
-  "mode": "pre",
+  "mode": "exit",
   "tag": "next",
   "initialVersions": {
     "fastify-example": "0.0.0",
@@ -9,5 +9,9 @@
     "@lapidev/routes-walker": "0.0.0",
     "@lapidev/walker": "0.0.0"
   },
-  "changesets": ["orange-pillows-pretend", "sharp-dolls-watch", "silent-jeans-marry"]
+  "changesets": [
+    "orange-pillows-pretend",
+    "sharp-dolls-watch",
+    "silent-jeans-marry"
+  ]
 }
