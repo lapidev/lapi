@@ -7,18 +7,17 @@
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
+      "dependsOn": ["^build"],
       "outputs": ["src/**/*"]
     },
     "lint:fix": {
+      "dependsOn": ["^build"],
       "outputs": ["src/**/*"]
     },
     "dev": {
       "cache": false
     },
     "watch": {
-      "cache": false
-    },
-    "sort-package-json": {
       "cache": false
     },
     "test": {

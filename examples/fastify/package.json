@@ -17,11 +17,11 @@
     "dev": "nodemon --watch src --ext ts --exec \"npm run start\"",
     "lint": "../../scripts/lint.sh",
     "lint:fix": "npm run lint -- --fix",
-    "start": "NANO_ENV_MODULE=module node --es-module-specifier-resolution=node --loader ts-node/esm src/index.ts",
+    "start": "node --es-module-specifier-resolution=node --loader ts-node/esm src/index.ts",
     "test": "exit 0",
     "test:coverage": "exit 0"
   },
-  "prettier": "../../.prettierrc.js",
+  "prettier": "../../.prettierrc.cjs",
   "dependencies": {
     "@graphql-tools/utils": "^8.6.1",
     "@lapidev/resolvers-walker": "0.0.1-next.2",

@@ -11,6 +11,7 @@ module.exports = {
     },
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+  passWithNoTests: true,
   rootDir: './test',
   testMatch: ['**/*.spec.(ts|tsx|js|jsx)'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/src/'],
