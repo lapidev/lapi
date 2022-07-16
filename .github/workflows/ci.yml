@@ -24,3 +24,16 @@ jobs:
       - run: npm i -g npm@8
       - run: npm ci
       - run: npm run ${{ matrix.cmd }}
+  publish:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-20.04
+    needs: [check]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm i -g npm@8
+      - run: npm ci
+      - run: npm run changeset:publish
