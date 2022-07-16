@@ -43,3 +43,5 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: npm run changeset:publish
+      - run: npm run changeset:tag
+      - run: git push --follow-tags

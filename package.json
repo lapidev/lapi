@@ -11,6 +11,7 @@
     "build": "turbo run build",
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
+    "changeset:tag": "changeset tag",
     "changeset:version": "changeset version",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
