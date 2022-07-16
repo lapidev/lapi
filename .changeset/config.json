@@ -5,6 +5,6 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [["@lapidev/walker", "@lapidev/routes-walker", "@lapidev/resolvers-walker"]],
-  "ignore": [],
+  "ignore": ["@lapidev/jest-config", "@lapidev/tsconfig", "*-example"],
   "updateInternalDependencies": "patch"
 }
