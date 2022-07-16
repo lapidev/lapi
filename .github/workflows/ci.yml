@@ -25,7 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run ${{ matrix.cmd }}
   publish:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-20.04
     needs: [check]
     steps:
