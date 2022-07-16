@@ -16,6 +16,9 @@ jobs:
         node-version: ['16']
     name: ${{ matrix.node-version }} - ${{ matrix.cmd }}
     steps:
+      - uses: styfle/cancel-workflow-action@0.10.0
+        with:
+          access_token: ${{ github.token }}
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
