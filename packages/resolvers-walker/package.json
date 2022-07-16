@@ -1,6 +1,6 @@
 {
   "name": "@lapidev/resolvers-walker",
-  "version": "0.0.1-next.2",
+  "version": "0.1.0",
   "description": "@hapi/hapi plugin that adds routes from the filesystem",
   "homepage": "https://lapi.dev",
   "bugs": {
@@ -27,7 +27,7 @@
   },
   "prettier": "../../.prettierrc.cjs",
   "dependencies": {
-    "@lapidev/walker": "0.0.1-next.0",
+    "@lapidev/walker": "0.1.0",
     "change-case": "^4.1.2",
     "globby": "^13.1.2",
     "lodash-es": "^4.17.21"
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@lapidev/jest-config": "0.0.0",
     "@lapidev/tsconfig": "0.0.0",
-    "@lapidev/walker": "0.0.1-next.0",
+    "@lapidev/walker": "0.1.0",
     "@swc/cli": "0.1.57",
     "@swc/core": "1.2.215",
     "@types/lodash-es": "4.17.6",
