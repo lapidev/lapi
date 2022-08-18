@@ -27,7 +27,7 @@
     "@lapidev/resolvers-walker": "0.1.0",
     "@lapidev/routes-walker": "0.1.0",
     "@lapidev/walker": "0.1.0",
-    "apollo-server-core": "^3.6.3",
+    "apollo-server-core": "^3.10.1",
     "apollo-server-fastify": "^3.6.3",
     "apollo-server-plugin-base": "^3.5.1",
     "fastify": "^3.27.1",
